@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "https://mast22.github.io"
 title = "Nick Kozhenin"
 description = "Python X Rust"
 theme = "hyde"
