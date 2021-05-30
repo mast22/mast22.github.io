@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Nick Kozhenin</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;mast22.github.io&#x2F;print.css" media="print">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;mast22.github.io&#x2F;poole.css">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;mast22.github.io&#x2F;hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+
+      
+      
+    </head>
+
+    <body class=" layout-reverse">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+                            <a href="https:&#x2F;&#x2F;mast22.github.io"><h1>Nick Kozhenin</h1></a>
+                            
+                            <p class="lead">Python X Rust</p>
+                            
+                        
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+<div class="post">
+  <h1 class="post-title">Первый пост</h1>
+  <span class="post-date">2021-05-30</span>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<pre style="background-color:#2b303b;">
+<code class="language-rust" data-lang="rust"><span style="color:#b48ead;">use crate</span><span style="color:#c0c5ce;">::vec3::Vec3;
+
+#[</span><span style="color:#bf616a;">derive</span><span style="color:#c0c5ce;">(Debug, Copy, Clone)]
+</span><span style="color:#b48ead;">pub struct </span><span style="color:#c0c5ce;">Ray {
+    </span><span style="color:#bf616a;">origin</span><span style="color:#c0c5ce;">: Vec3, </span><span style="color:#65737e;">// Расположение
+    </span><span style="color:#bf616a;">direction</span><span style="color:#c0c5ce;">: Vec3, </span><span style="color:#65737e;">// Направление
+</span><span style="color:#c0c5ce;">}
+
+</span><span style="color:#b48ead;">impl </span><span style="color:#c0c5ce;">Ray {
+    </span><span style="color:#b48ead;">pub fn </span><span style="color:#8fa1b3;">ray</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">origin</span><span style="color:#c0c5ce;">: Vec3, </span><span style="color:#bf616a;">direction</span><span style="color:#c0c5ce;">: Vec3) -&gt; Ray {
+        Ray {
+            origin,
+            direction,
+        }
+    }
+
+    </span><span style="color:#b48ead;">pub fn </span><span style="color:#8fa1b3;">origin</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">) -&gt; Vec3 {
+        </span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">.origin
+    }
+
+    </span><span style="color:#b48ead;">pub fn </span><span style="color:#8fa1b3;">direction</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">) -&gt; Vec3 {
+        </span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">.direction
+    }
+
+    </span><span style="color:#b48ead;">pub fn </span><span style="color:#8fa1b3;">at</span><span style="color:#c0c5ce;">(</span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">, </span><span style="color:#bf616a;">t</span><span style="color:#c0c5ce;">: </span><span style="color:#b48ead;">f32</span><span style="color:#c0c5ce;">) -&gt; Vec3 {
+        </span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">.origin + </span><span style="color:#bf616a;">self</span><span style="color:#c0c5ce;">.direction * t
+    }
+}
+
+#[</span><span style="color:#bf616a;">cfg</span><span style="color:#c0c5ce;">(test)]
+</span><span style="color:#b48ead;">mod </span><span style="color:#c0c5ce;">tests {
+    </span><span style="color:#b48ead;">use super</span><span style="color:#c0c5ce;">::*;
+
+    #[</span><span style="color:#bf616a;">test</span><span style="color:#c0c5ce;">]
+    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">test_ray_origin</span><span style="color:#c0c5ce;">() {}
+
+    #[</span><span style="color:#bf616a;">test</span><span style="color:#c0c5ce;">]
+    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">test_ray_direction</span><span style="color:#c0c5ce;">() {}
+
+    #[</span><span style="color:#bf616a;">test</span><span style="color:#c0c5ce;">]
+    </span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">test_ray_point_at_parameter</span><span style="color:#c0c5ce;">() {}
+}
+</span></code></pre>
+</div>
+
+        </div>
+
+    </body>
+
+</html>
