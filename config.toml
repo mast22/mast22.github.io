@@ -3,7 +3,6 @@ base_url = "https://mast22.github.io"
 title = "Nick Kozhenin"
 description = "Python X Rust"
 theme = "hyde"
-taxonomies = []
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
