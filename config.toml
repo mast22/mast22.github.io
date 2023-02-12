@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://mast22.github.io"
-title = "Nick Kozhenin"
-description = "Python X Rust"
+title = "Voilin Endpoint"
+description = ""
 theme = "hyde"
 
 # Whether to automatically compile all Sass files in the sass directory

@@ -1,6 +1,0 @@
-1. Оптимизация перечислений (enum) в Rust.
-2. Имплементация итератора в Rust. (По видио Jon и Too-many-lists).
-3. Оптимизация LEFT OUTER JOIN запросов в Django при использовании annotate. Также values функция, которую скинул Алексей
-5. Grub Bad Apple?
-6. Ещё один prefetch_related, select_related
-7. 
