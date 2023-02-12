@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://voilin.net/"
-title = "Voilin's Endpoint"
-description = ""
+title = "Voilin NetPoint"
+description = "Voilin's connection point"
 theme = "hyde"
 
 # Whether to automatically compile all Sass files in the sass directory
@@ -20,5 +20,5 @@ highlight_code = true
 hyde_reverse = "true"
 
 hyde_links = [
-    {url = "https://www.linkedin.com/in/kozhenin/", name = "HIRE ME"},
+    {url = "/about/", name = "About"},
 ]
