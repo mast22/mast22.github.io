@@ -1,6 +1,6 @@
 # The URL the site will be built for
-base_url = "https://mast22.github.io"
-title = "Voilin Endpoint"
+base_url = "https://voilin.net/"
+title = "Voilin's Endpoint"
 description = ""
 theme = "hyde"
 
@@ -18,3 +18,7 @@ highlight_code = true
 [extra]
 # Put all your custom variables here
 hyde_reverse = "true"
+
+hyde_links = [
+    {url = "https://www.linkedin.com/in/kozhenin/", name = "HIRE ME"},
+]
