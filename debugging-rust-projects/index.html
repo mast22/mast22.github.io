@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Voilin&#x27;s notes</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://voilin.net/print.css" media="print">
+      <link rel="stylesheet" href="https://voilin.net/poole.css">
+      <link rel="stylesheet" href="https://voilin.net/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+
+      
+      
+    </head>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(92578415, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/92578415" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <body class=" layout-reverse">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+                            <a href="https:&#x2F;&#x2F;voilin.net&#x2F;"><h1>Voilin&#x27;s notes</h1></a>
+                            
+                        
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;about&#x2F;">About</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+<div class="post">
+  <h1 class="post-title">Modern debugging Rust projects in VSCode</h1>
+  <span class="post-date">2025-04-17</span>
+  <h1 id="introduction">Introduction</h1>
+<p>I won’t bug you with an explanation, at this level you should be perfectly knowledgeable to reason and be able to retrieve information from the internet as efficiently as possible. I won't even blame if you don't read this paragraph, just go copy-and-paste config I've provided below this wall of text.</p>
+<h1 id="the-config">The config</h1>
+<ol>
+<li>
+<p>Setup a <code>.vscode/tasks.json</code> file in your project, don't forget to add it to <code>.gitignore</code>. It will include a job that will build your rust project every time you start a debugging session.</p>
+</li>
+<li>
+<p>Setup a <code>.vscode/launch.json</code> as well. It will be responsible for launching the debugging session. <strong>Notice that you will need to change 2 things in launch.json</strong>: program argument, replace <code>&lt;your_binary&gt;</code> with well... you know. Secondly, remove or edit <code>args</code> to pass your arguments to the program.</p>
+</li>
+<li>
+<p>Run with F5, you should be good to go.</p>
+</li>
+</ol>
+<p><code>.vscode/tasks.json</code></p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>    &quot;</span><span style="color:#a3be8c;">version</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">2.0.0</span><span>&quot;,
+</span><span>    &quot;</span><span style="color:#a3be8c;">tasks</span><span>&quot;: [
+</span><span>        {
+</span><span>            &quot;</span><span style="color:#a3be8c;">label</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">rust: cargo build</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">type</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">cargo</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">command</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">build</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">problemMatcher</span><span>&quot;: [
+</span><span>                &quot;</span><span style="color:#a3be8c;">$rustc</span><span>&quot;
+</span><span>            ],
+</span><span>            &quot;</span><span style="color:#a3be8c;">group</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">build</span><span>&quot;
+</span><span>        }
+</span><span>    ]
+</span><span>}
+</span></code></pre>
+<p><code>.vscode/lauch.json</code></p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>    &quot;</span><span style="color:#a3be8c;">version</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">0.2.0</span><span>&quot;,
+</span><span>    &quot;</span><span style="color:#a3be8c;">configurations</span><span>&quot;: [
+</span><span>        {
+</span><span>            &quot;</span><span style="color:#a3be8c;">type</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">lldb</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">request</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">launch</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">name</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">Run app with test args</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">program</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">${workspaceFolder}/target/debug/&lt;your_binary&gt;</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">args</span><span>&quot;: [&quot;</span><span style="color:#a3be8c;">--config</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">./etc/config.dev.toml</span><span>&quot;],
+</span><span>            &quot;</span><span style="color:#a3be8c;">cwd</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">${workspaceFolder}</span><span>&quot;,
+</span><span>            &quot;</span><span style="color:#a3be8c;">preLaunchTask</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">rust: cargo build</span><span>&quot;
+</span><span>        }
+</span><span>    ]
+</span><span>}
+</span></code></pre>
+
+</div>
+
+        </div>
+
+    </body>
+
+</html>
