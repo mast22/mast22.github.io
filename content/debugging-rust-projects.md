@@ -15,7 +15,7 @@ I won’t bug you with an explanation, at this level you should be perfectly kno
 3. Run with F5, you should be good to go.
 
 `.vscode/tasks.json`
-```
+```json
 {
 	"version": "2.0.0",
 	"tasks": [
@@ -33,7 +33,7 @@ I won’t bug you with an explanation, at this level you should be perfectly kno
 ```
 
 `.vscode/lauch.json`
-```
+```json
 {
     "version": "0.2.0",
     "configurations": [
