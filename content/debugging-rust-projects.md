@@ -1,6 +1,6 @@
 +++
 title = "Modern debugging Rust projects in VSCode"
-date = "2023-02-12"
+date = "2025-04-17"
 +++
 
 # Introduction
