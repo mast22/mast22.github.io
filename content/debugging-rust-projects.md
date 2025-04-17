@@ -17,18 +17,18 @@ I won’t bug you with an explanation, at this level you should be perfectly kno
 `.vscode/tasks.json`
 ```json
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "rust: cargo build",
-			"type": "cargo",
-			"command": "build",
-			"problemMatcher": [
-				"$rustc"
-			],
-			"group": "build"
-		}
-	]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rust: cargo build",
+            "type": "cargo",
+            "command": "build",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": "build"
+        }
+    ]
 }
 ```
 
